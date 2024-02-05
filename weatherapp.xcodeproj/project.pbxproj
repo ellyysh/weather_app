@@ -16,6 +16,8 @@
 		14044A2A2B6E474A000EE0F5 /* weatherappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14044A292B6E474A000EE0F5 /* weatherappTests.swift */; };
 		14044A342B6E474A000EE0F5 /* weatherappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14044A332B6E474A000EE0F5 /* weatherappUITests.swift */; };
 		14044A362B6E474A000EE0F5 /* weatherappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14044A352B6E474A000EE0F5 /* weatherappUITestsLaunchTests.swift */; };
+		14044AFF2B7058BD000EE0F5 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14044AFE2B7058BD000EE0F5 /* Service.swift */; };
+		14044B012B705C8C000EE0F5 /* Struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14044B002B705C8C000EE0F5 /* Struct.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		14044A2F2B6E474A000EE0F5 /* weatherappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherappUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14044A332B6E474A000EE0F5 /* weatherappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherappUITests.swift; sourceTree = "<group>"; };
 		14044A352B6E474A000EE0F5 /* weatherappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		14044AFE2B7058BD000EE0F5 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		14044B002B705C8C000EE0F5 /* Struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Struct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +104,10 @@
 			isa = PBXGroup;
 			children = (
 				14044A122B6E4748000EE0F5 /* AppDelegate.swift */,
+				14044AFE2B7058BD000EE0F5 /* Service.swift */,
 				14044A142B6E4748000EE0F5 /* SceneDelegate.swift */,
 				14044A162B6E4748000EE0F5 /* ViewController.swift */,
+				14044B002B705C8C000EE0F5 /* Struct.swift */,
 				14044A182B6E4748000EE0F5 /* Main.storyboard */,
 				14044A1B2B6E474A000EE0F5 /* Assets.xcassets */,
 				14044A1D2B6E474A000EE0F5 /* LaunchScreen.storyboard */,
@@ -259,7 +265,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				14044A172B6E4748000EE0F5 /* ViewController.swift in Sources */,
+				14044AFF2B7058BD000EE0F5 /* Service.swift in Sources */,
 				14044A132B6E4748000EE0F5 /* AppDelegate.swift in Sources */,
+				14044B012B705C8C000EE0F5 /* Struct.swift in Sources */,
 				14044A152B6E4748000EE0F5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

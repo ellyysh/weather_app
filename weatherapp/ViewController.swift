@@ -15,67 +15,54 @@ class ViewController: UIViewController {
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+           super.viewDidLoad()
+       }
+
+       @IBAction func getWeatherButtonTapped(_ sender: Any) {
+           guard let city = cityTextField.text else {
+               return
+           }
+
+           WeatherService.shared.getWeatherData(city: city) { result in
+               switch result {
+               case .success(let weatherData):
+                   self.updateUI(with: weatherData)
+               case .failure:
+                   self.showErrorAlert(message: "Не удалось загрузить данные о погоде")
+               }
+           }
+       }
+
+       private func updateUI(with weatherData: WeatherData) {
+           let temperature = Int(weatherData.main.temp)
+           let description = weatherData.weather.first?.description ?? ""
+           let icon = weatherData.weather.first?.icon ?? ""
+
+           DispatchQueue.main.async {
+               self.temperatureLabel.text = "\(temperature)°C"
+               self.descriptionLabel.text = description
+
+               if let iconURL = URL(string: "https://openweathermap.org/img/wn/\(icon).png") {
+                   URLSession.shared.dataTask(with: iconURL) { (iconData, _, _) in
+                       if let data = iconData, let image = UIImage(data: data) {
+                           DispatchQueue.main.async {
+                               self.weatherImageView.image = image
+                           }
+                       }
+                   }.resume()
+               }
+           }
+       }
+
+    private func showErrorAlert(message: String) {
+       DispatchQueue.main.async {
+           let alert = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+           let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+           alert.addAction(okAction)
+           self.present(alert, animated: true, completion: nil)
+       }
     }
 
-    @IBAction func getWeatherButtonTapped(_ sender: Any) {
-        guard let city = cityTextField.text else {
-                 return
-             }
-             
-             getWeatherData(city: city)
-    }
-    func getWeatherData(city: String) {
-        let apiKey = "a5ee3113cfceb38fd98800cdd47113ee"
-        let urlString = "https://api.openweathermap.org/data/2.5/weather?q=\(city)&units=metric&appid=\(apiKey)"
-        
-        guard let url = URL(string: urlString) else {
-            return
-        }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data, error == nil else {
-                return
-            }
-            
-            do {
-                let weatherData = try JSONDecoder().decode(WeatherData.self, from: data)
-                let temperature = Int(weatherData.main.temp)
-                let description = weatherData.weather.first?.description ?? ""
-                let icon = weatherData.weather.first?.icon ?? ""
-                
-                DispatchQueue.main.async {
-                    self.temperatureLabel.text = "\(temperature)°C"
-                    self.descriptionLabel.text = description
-                    
-                    if let iconURL = URL(string: "https://openweathermap.org/img/wn/\(icon).png") {
-                        URLSession.shared.dataTask(with: iconURL) { (iconData, _, _) in
-                            if let data = iconData, let image = UIImage(data: data) {
-                                DispatchQueue.main.async {
-                                    self.weatherImageView.image = image
-                                }
-                            }
-                        }.resume()
-                    }
-                }
-            } catch {
-                print(error)
-            }
-        }.resume()
-    }
-    
-}
-struct WeatherData: Codable {
-    let main: WeatherMain
-    let weather: [Weather]
-}
 
-struct WeatherMain: Codable {
-    let temp: Double
-}
+   }
 
-struct Weather: Codable {
-    let description: String
-    let icon: String
-}

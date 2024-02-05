@@ -27,7 +27,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search city" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QnT-n6-953">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search city" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QnT-n6-953">
                                 <rect key="frame" x="60" y="409" width="273" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -51,10 +51,13 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zQY-GV-OFP" secondAttribute="trailing" constant="87" id="Blb-7o-YoN"/>
                             <constraint firstItem="zQY-GV-OFP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="Kcf-fp-Htq"/>
                             <constraint firstItem="IJr-cu-s1I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="167" id="QAv-sx-1vE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QnT-n6-953" secondAttribute="bottom" constant="375" id="RDZ-6z-BFB"/>
+                            <constraint firstItem="QnT-n6-953" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="350" id="Se0-k4-Bc4"/>
                             <constraint firstItem="zQY-GV-OFP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="86" id="Swy-Cu-NkQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bYe-5X-aTh" secondAttribute="trailing" constant="87" id="VRK-5X-xzw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lEG-VO-qLq" secondAttribute="bottom" constant="317" id="auW-Xn-p0b"/>
                             <constraint firstItem="lEG-VO-qLq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="136" id="c9g-y5-UDd"/>
+                            <constraint firstItem="IJr-cu-s1I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="239" id="dsg-Gz-Ltf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bYe-5X-aTh" secondAttribute="bottom" constant="528" id="eFf-gM-QyZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QnT-n6-953" secondAttribute="trailing" constant="60" id="gs0-cc-zM1"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lEG-VO-qLq" secondAttribute="trailing" constant="137" id="hMd-4U-M3w"/>
